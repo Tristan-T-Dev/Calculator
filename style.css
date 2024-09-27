@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculator{
+    background: #22252d;
+    width: 100%;
+    max-width: 375px;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    filter: drop-shadow(0 20px 20px #0009);
+}
+.display{
+    min-height: 200px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: azure;
+    text-align: right;
+    flex: 1 1 0%;
+}
+.display .input{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.display .output{
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 100%;
+    overflow: auto;
+}
+.display .operator{
+    color: crimson;
+}
+.display .brackets,
+.display .percentages{
+    color: aquamarine;
+}
+.keys{
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border-radius: 1.5rem 1.5rem 0 0;
+    background: #363b47;
+    grid-gap: 1rem;
+    box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+.keys .key{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+    background-color: #565c6c;
+    border-radius: 0.2rem;
+    transition: 0.2s;
+    user-select: none;
+}
+.keys .key span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+    color: azure;
+    font-weight: 700;
+}
+.keys .key:hover{
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key.operator{
+    background-color: #a2aec030;
+}
+.keys .key.operator span{
+    color: crimson;
+}
+.keys .key.action{
+    background-color: #a2aec030;
+}
+.keys .key.action span{
+    color: aquamarine;
+}
+@media screen and (max-width: 376px){
+    .calculator{
+        background: #22252d;
+        width: 100%;
+        max-width: 375px;
+        min-height: 640px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        filter: drop-shadow(0 20px 20px #0009);
+        margin: 2rem;
+    }
+}
